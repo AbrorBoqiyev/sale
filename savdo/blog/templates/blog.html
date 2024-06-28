@@ -7,14 +7,16 @@
 </head>
 <body>
     <h1>{{title}}</h1>
+    
     <p>{{description}}</p>
-
+    <a href="{% url "create_blog" %}">create_blog</a>
     <div class="cards">
         {% for i in blogs%}
             <div class="card">
                 <div class="content">
                     <h3>{{i.title}}</h3>
                     <p>{{i.description}}</p>
+                    <hr style="width: 40%; margin-left: 0;">
                     <span>{{i.date_posted}}</span>
                 </div>
             </div>
@@ -34,7 +36,7 @@
     }
     .card{
         width: 100%;
-        background-color: gray;
+        background-color: #666;
         color: snow;
         border-radius: 5px;
     }

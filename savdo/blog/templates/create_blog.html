@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create_blog</title>
+</head>
+<body>
+    <h1>Create a new blog here</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {% comment %} # csrf_token is a security feature that prevents Cross-Site Request Forgery (CSRF) attacks. {% endcomment %}
+        {% comment %} # CSRF attacks are a type of malicious attack where unauthorized commands are performed on behalf of an authenticated user. {% endcomment %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

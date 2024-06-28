@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Blog
-# from .forms import BlogsForm
+from .forms import BlogsForm
 
 
 
-def blog(request):
+def blogsview(request):
     all_blogs  = Blog.objects.all()
     context = {
         'title': 'This is the blog page',
@@ -12,3 +12,15 @@ def blog(request):
         'blogs': all_blogs
     }
     return render(request, 'blog.html', context)
+
+
+def create_blog(request):
+    if request.method == 'POST':
+        form = BlogsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('blog.html')
+    else:
+        form = BlogsForm()
+        
+    return render(request, 'create_blog.html', context={'form': form})
