@@ -8,10 +8,39 @@
 <body>
     <h1>{{title}}</h1>
     <p>{{description}}</p>
+
+    <div class="cards">
+        {% for i in blogs%}
+            <div class="card">
+                <div class="content">
+                    <h3>{{i.title}}</h3>
+                    <p>{{i.description}}</p>
+                    <span>{{i.date_posted}}</span>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+
 </body>
 <style>
     body{
         background-color: lightblue;
     }
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .card{
+        width: 100%;
+        background-color: gray;
+        color: snow;
+        border-radius: 5px;
+    }
+    .content {
+        padding: 5px 15px;
+    }
+
 </style>
 </html>
