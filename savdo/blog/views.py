@@ -19,7 +19,7 @@ def create_blog(request):
         form = BlogsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('blog.html')
+            return redirect('blog')
     else:
         form = BlogsForm()
         
