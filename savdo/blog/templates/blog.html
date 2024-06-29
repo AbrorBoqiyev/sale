@@ -18,7 +18,7 @@
         {% for i in blogs%}
             <div class="card">
                 <div class="content">
-                    <h3>{{i.title|upper}}</h3>
+                    <h3 style="color: orange;">{{i.title|title}}</h3>
                     <p>{{i.description}}</p>
                     <hr style="width: 40%; margin-left: 0;">
                     <span>{{i.date_posted}}</span>
@@ -68,6 +68,7 @@
     }
     .content {
         padding: 5px 15px;
+        cursor: pointer;
     }
 
 </style>
