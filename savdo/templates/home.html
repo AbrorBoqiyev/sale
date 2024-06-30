@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{%block title%}Home{%endblock%}
+
+{%block css%}
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+{%endblock%}
+
+{%block content%}
+    <h1>{{text}}</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam asperiores quasi corrupti voluptate aperiam sunt id sint sequi neque? Numquam mollitia debitis ea animi neque delectus, explicabo ratione nulla. Voluptates!</p>
+{%endblock%}

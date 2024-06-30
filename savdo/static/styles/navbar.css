@@ -1,0 +1,24 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: inset 1px 1px 5px #333;
+    padding: 20px;
+    background-color: lightblue;
+}
+a{
+    text-decoration: none;
+    padding: 20px;
+    color: #444;
+    font-size: 25px;
+    font-family: cursive ;
+    font-weight: bolder;
+}
+a:hover{
+    background-color: green;
+    color: snow;
+}
+.login{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: orange;
+    font-size: 25px;
+}
