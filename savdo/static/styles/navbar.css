@@ -12,9 +12,10 @@ a{
     font-size: 25px;
     font-family: cursive ;
     font-weight: bolder;
+    border-radius: 10px;
 }
 a:hover{
-    background-color: green;
+    background-color: rgb(27, 219, 27);
     color: snow;
 }
 .login{

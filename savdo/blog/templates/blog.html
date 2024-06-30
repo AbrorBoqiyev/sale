@@ -1,75 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-</head>
-<body>
-    <header>
-        <h1>{{title}}</h1>    
-        <a href="{% url "create_blog" %}">create_blog</a>
-    </header>
-    <h3 style="text-align: center;">{{description}}</h3>
-    {% now "Y-m-d" %}
-    <span>___</span>
-    {% now "H:i:s" %}
-    <div class="cards">
-        {% for i in blogs%}
-            <div class="card">
-                <div class="content">
-                    <h3 style="color: orange;">{{i.title|title}}</h3>
-                    <p>{{i.description}}</p>
-                    <hr style="width: 40%; margin-left: 0;">
-                    <span>{{i.date_posted}}</span>
-                </div>
-            </div>
-        {% endfor %}
+{%extends 'base.html'%}
+{%load static %}
 
+{%block title%}Blog{%endblock%}
+
+{%block css%}
+    <link rel="stylesheet" href="{%static 'styles/blog.css'%}">
+{%endblock%}
+{%block content%}
+    <div class="cover_blog">
+
+        <div class="headBlog">
+            <h1>{{title}}</h1>    
+            <a href="{% url "create_blog" %}">create_blog</a>
+        </div>
+        <h3 style="text-align: center;">{{description}}</h3>
+        {% now "Y-m-d" %}
+        <span>___</span>
+        {% now "H:i:s" %}
+        <div class="cards">
+            {% for i in blogs%}
+                <div class="card">
+                    <div class="content">
+                        <h3 style="color: orange;">{{i.title|title}}</h3>
+                        <p>{{i.description}}</p>
+                        <hr style="width: 40%; margin-left: 0;">
+                        <span>{{i.date_posted}}</span>
+                    </div>
+                </div>
+            {% endfor %}
+    
+        </div>
     </div>
 
-</body>
-<style>
-    *{
-        transition: 0.5s;
-    }
-    body{
-        background-color: lightblue;
-    }
-    header{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    header a{
-        margin: 15px;
-        padding: 15px;
-        text-decoration: none;
-        font-size: 20px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        color: #333;
-        border-radius: 10px;
-    }
-    header a:hover{
-        background-color: green;
-        color: snow;
-    }
-    
-    .cards{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-    .card{
-        width: 100%;
-        background-color: #666;
-        color: snow;
-        border-radius: 5px;
-    }
-    .content {
-        padding: 5px 15px;
-        cursor: pointer;
-    }
-
-</style>
-</html>
+{%endblock%}
