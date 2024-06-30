@@ -1,11 +1,6 @@
 *{
     transition: 0.5s;
 }
-/* main{
-    background: linear-gradient( to right bottom, rgb(165, 235, 210), rgb(243, 227, 227)); 
-    height: 77vh;
-    padding: 30px 10px;
-} */
 .cover_blog {
     background: linear-gradient( to right bottom, rgb(207, 243, 230), rgb(250, 241, 241));
 }

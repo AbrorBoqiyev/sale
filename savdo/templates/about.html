@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%load static %}
+
+{%block title%} About {%endblock%}
+
+{%block css%}
+    <link rel="stylesheet" href="{% static "styles/about.css" %}">
+{%endblock%}
+
+{%block content%}
+    <div class="about-wrapper">
+        <h1>{{text}}</h1>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti architecto, possimus quibusdam est voluptate assumenda ipsum deleniti at expedita earum facilis, quam laboriosam sint obcaecati fuga! Dolorum dolor molestiae itaque!
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam ipsam enim corrupti quis hic, laudantium nihil natus alias eos! Ab.
+        </p>
+
+    </div>
+
+{%endblock%}
