@@ -1,0 +1,25 @@
+
+.headerPost{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 7rem;
+}
+hr {
+    width: 80%; 
+    margin: auto;
+}
+.post-item{
+    /* height: 30vh; */
+    width: 70%;
+    margin: 30px auto;
+    border-radius: 5px;
+    background: linear-gradient(to right bottom, lightblue, rgb(229, 185, 185));
+}
+h3{text-align: center;}
+.view-content{
+    padding: 20px;
+}
+.space{
+    height: 29.7vh;
+    /* background-color: red; */
+}

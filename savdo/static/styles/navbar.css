@@ -5,8 +5,7 @@ header{
     padding: 20px;
     background-color: lightblue;
 }
-a{
-    text-decoration: none;
+.links a{
     padding: 20px;
     color: #444;
     font-size: 25px;
@@ -14,12 +13,24 @@ a{
     font-weight: bolder;
     border-radius: 10px;
 }
-a:hover{
+.links a:hover{
     background-color: rgb(27, 219, 27);
     color: snow;
+}
+a {
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: sans-serif;
+    color: #333;
+    font-size: 25px;
+}
+a:hover{
+    background-color: rgb(19, 185, 19);
 }
 .login{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: orange;
     font-size: 25px;
+    cursor: pointer;
 }

@@ -1,9 +1,7 @@
 *{
     transition: 0.5s;
 }
-.cover_blog {
-    background: linear-gradient( to right bottom, rgb(207, 243, 230), rgb(250, 241, 241));
-}
+
 .headBlog{
     display: flex;
     justify-content: space-between;
