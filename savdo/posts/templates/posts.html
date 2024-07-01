@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%load static %}
+
+{%block title%}Posts{%endblock%}
+
+{%block css%}
+    <link rel="stylesheet" href="{%static "styles/posts.css"%}">
+{%endblock%}
+
+{%block content%}
+    <div class="posts-cover">
+        <h1>Posts</h1>
+        <hr>
+
+        {%for i in items%}
+            <h1>{{i.title}}</h1>
+            <p>{{i.content}}</p>
+            <span>{{i.author}}</span>
+        {%endfor%}
+
+    </div>
+{%endblock%}

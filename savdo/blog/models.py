@@ -12,3 +12,14 @@ class Blog(models.Model):
     
     class Meta:
         ordering = ('date_posted',)
+        
+class Product(models.Model):
+    mavzu = models.CharField(max_length=60)
+    tavsilot = models.TextField()
+    muallif = models.CharField(max_length=70)
+    
+    def __str__(self):
+        return self.mavzu
+    
+    class Meta:
+        ordering =  ('muallif',)

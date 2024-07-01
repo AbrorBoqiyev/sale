@@ -1,0 +1,11 @@
+.posts-cover{
+    background: linear-gradient(to right bottom, rgb(207, 243, 230), rgb(250, 241, 241));
+    height: 75.8vh;
+}
+h1{
+    margin-left: 10rem;
+}
+hr {
+    width: 80%; 
+    margin: 0 auto;
+}
