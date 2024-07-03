@@ -1,14 +1,14 @@
 from django import forms
 
 CHOICES = (
-    ('1', 'Male')
-    ('2', 'Female')
-    ('3', 'Other')
+    ('1', 'Male'),
+    ('2', 'Female'),
+    ('3', 'Other'),
 )
 
-class UsersForm(forms.Form):
+class UserForm(forms.Form):
     username = forms.CharField(label='Username', max_length=50,
-                               widget=forms.TextInput(attrs={'placeholder: Username'}))
+                               widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     first_name = forms.CharField(label='First Name', max_length=50,
                                  widget=forms.TextInput(attrs={'placeholder': "First name"}))
     last_name = forms.CharField(label='Last Name', max_length=50,

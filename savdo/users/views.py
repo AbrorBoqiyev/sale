@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
-from .forms import UsersForm
+from .forms import UserForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages 
 
 # Create your views here.
 def create_user(request):
-    form = UsersForm()
+    form = UserForm()
 
     if request.method == 'POST':
-        form = UsersForm(request.POST, request.FILES)
+        form = UserForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
