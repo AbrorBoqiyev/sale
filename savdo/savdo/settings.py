@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog',
     'posts',
     'django_bootstrap5',
+    # 'users',
 ]
 
 MIDDLEWARE = [
