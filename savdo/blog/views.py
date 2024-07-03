@@ -34,7 +34,7 @@ def update_blog(request, pk):
         form = BlogsForm(request.POST, instance=blog)
         if form.is_valid():
             form.save()
-            redirect('blog')
+            return  redirect('blog')
     return render(request, 'update-blog.html', context={'form': form})
 
 

@@ -1,8 +1,8 @@
 {% load static%}
 {% load django_bootstrap5 %}
-
 {% bootstrap_css %}
 {% bootstrap_javascript %}
+{% bootstrap_messages%}
 
 
 <!DOCTYPE html>
@@ -23,7 +23,11 @@
 <body>
     {%include "navbar.html"%}
 
-    <main style="background: linear-gradient(to right bottom, rgb(207, 243, 230), rgb(250, 241, 241));" >
+    <div class="container" id="messages">
+        {%bootstrap_messages%}
+    </div>
+
+    <main>
         {%block content%}
 
         {%endblock%}
@@ -34,12 +38,16 @@
     {%block scrpts%}
 
     {%endblock%}
+
+<script>
+    setTimeout(function(){
+        let messages = document.querySelectorAll('#messages')
+        messages.forEach(function (messages){
+            messages.remove()
+        })
+    }, 5000)
+
+</script>
 </body>
-<style>
-    *{
-        padding: 0;
-        margin: 0;
-        transition: 0.5s;
-    }
-</style>
+
 </html>
