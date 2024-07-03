@@ -1,0 +1,47 @@
+{% comment %} {%extends 'base.html'%}
+{%load static%} {% endcomment %}
+
+<style>
+    .info{
+        padding: 20px 0 0 20rem;
+    }
+    
+    form{
+        width: 80%;
+        margin-left: 11rem;
+        padding: 20px 20px 2.35rem 20px;
+    }
+    input, textarea{
+        width: 90%;
+        padding:  5px 10px;
+        background: linear-gradient(to right bottom, lightgray, lightblue);
+        border: none;
+        outline: none;
+        border-radius: 5px;
+    }
+    
+    input, label, textarea{
+        display: block;
+    }
+    label, input[type='submit']{
+        margin-top: 20px;
+    }
+    input:hover{
+        background-color: red;
+    }
+    textarea{
+        height: 10rem;
+    }
+</style>
+
+<div class="form-wrapper">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        {%if btn_text%}
+            <input type="submit" value="{{ btn_text }}" />
+        {%else %}
+            <input type="submit" value="submit" />
+        {%endif%}
+    </form>
+</div>

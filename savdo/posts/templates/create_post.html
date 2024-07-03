@@ -4,14 +4,7 @@
 {%block title%} Create_post {%endblock%}
 
 {%block content%}
-    <h1>Create Post here</h1>
+    <h1 class="info">Create Post here</h1>
 
-    <form method="POST">
-        {%csrf_token%}
-        {% comment %} # csrf_token is a security feature that prevents Cross-Site Request Forgery (CSRF) attacks. {% endcomment %}
-        {% comment %} # CSRF attacks are a type of malicious attack where unauthorized commands are performed on behalf of an authenticated user. {% endcomment %}
-        {{form.as_p}}
-        <input type="submit" value="submit">
-    </form>
-
+    {%include 'form_snippets.html' with form=form%}
 {%endblock%}
