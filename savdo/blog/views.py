@@ -24,3 +24,21 @@ def create_blog(request):
         form = BlogsForm()
         
     return render(request, 'create_blog.html', context={'form': form})
+
+
+def update_blog(request, pk):
+    blog = Blog.objects.get(id=pk)
+    form = BlogsForm(instance=blog)
+    
+    if request.method == 'POST':
+        form = BlogsForm(request.POST, instance=blog)
+        if form.is_valid():
+            form.save()
+            redirect('blog')
+    return render(request, 'update-blog.html', context={'form': form})
+
+
+def delete_blog(request, pk):
+    blog = Blog.objects.get(id=pk)
+    blog.delete()
+    return redirect('blog')

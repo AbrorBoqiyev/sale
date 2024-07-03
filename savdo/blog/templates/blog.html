@@ -19,11 +19,13 @@
         <div class="cards">
             {% for i in blogs%}
                 <div class="card">
-                    <div class="content">
-                        <h3 style="color: orange;">{{i.title|title}}</h3>
-                        <p>{{i.description}}</p>
-                        <hr style="width: 40%; margin-left: 0;">
-                        <span>{{i.date_posted}}</span>
+                    <h3 style="color: orange;">{{i.title|title}}</h3>
+                    <p>{{i.description}}</p>
+                    <hr style="width: 40%; margin-left: 0;">
+                    <span>{{i.date_posted}}</span>
+                    <div class="action-btns">
+                        <a href="{%url 'update-blog' i.id %}">edit</a>
+                        <a class="del" href="{%url 'delete-blog' i.id%}">delete</a>
                     </div>
                 </div>
             {% endfor %}
