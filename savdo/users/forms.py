@@ -23,4 +23,4 @@ class UserForm(forms.Form):
     #                            attrs={'class': 'form-control'}))                               
     
     def is_valid(self) -> bool:
-        return super.is_valid()
+        return super().is_valid()
