@@ -17,7 +17,15 @@ hr {
     padding: 25px;
     width: 90%;
     margin: auto;
+    height: 40rem;
+    overflow-y: auto;
+    
 }
+.cover-cards::-webkit-scrollbar{
+    background-color: transparent;
+    border-radius: 15px;
+}
+
 .post-card{
     width: 100%;
     background-color: rgb(0,0,0,0.1);
