@@ -22,11 +22,11 @@
 <body>
     {%include "navbar.html"%}
 
-    <div class="container mt-3"  id="messages">
-        {%bootstrap_messages%}
-    </div>
-
+    
     <main>
+        <div class="container mt-3"  id="messages">
+            {%bootstrap_messages%}
+        </div>
         {%block content%}
 
         {%endblock%}
