@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import PostsForm
 from .models import Posts
+from django.contrib import messages
 
 
 def postsView(request):
@@ -12,8 +13,12 @@ def create_post(request):
     if request.method == 'POST':
         form = PostsForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('posts')
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            
+        messages.success(request, 'post created successfully!')
+        return redirect('posts')
     else: 
         form = PostsForm()
     return render(request, 'create_post.html', context={'form': form})
@@ -39,4 +44,5 @@ def view_post(request, pk):
 def delete_post(request, pk):
     post = Posts.objects.get(id=pk)
     post.delete()
+    messages.success(request, 'Post deleted successfully!')
     return redirect('posts')

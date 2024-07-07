@@ -33,6 +33,17 @@ hr {
     border-radius: 10px;
     position: relative;
 }
+
+.post-info{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+.pict{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
 .action-btns {
     position: absolute;
     bottom: 2rem;
