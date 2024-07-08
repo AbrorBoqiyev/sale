@@ -32,6 +32,7 @@ def update_post(request, pk):
         form = PostsForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
+            messages.success(request, 'post is updated successfully')
             return redirect('posts')
     return render(request, 'update-post.html', context={'form': form})
 
