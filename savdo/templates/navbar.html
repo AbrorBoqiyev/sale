@@ -16,8 +16,16 @@
             <a class="nav-item login" href="{%url 'login_user'%}">login</a>
             <a class="nav-item signup" href="{%url 'create-user'%}">sign up</a>
         {% else %}
-            <a class="nav-item login" href="{%url "logout_user"%}">Log out</a>
-            <a class="nav-item signup" href="{%url "create_post"%}">Create post</a>
+            <div class="profile-auth-wrapper">
+                <a class="nav-item signup" href="{%url "create_post"%}">Create post</a>
+                <div class="content">
+                    <p class="user-info">
+                        {{ request.user.username | title}}     
+                        <img src="request.user.profile.image.url" class="user-image" alt="user-image">
+                     </p>
+                    <a class="nav-item logout" href="{%url "logout_user"%}">Log out</a>
+                </div>
+            </div>
         {%endif%}
     </div>
 </header>

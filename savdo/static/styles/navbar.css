@@ -44,3 +44,33 @@ a:hover{
     font-size: 25px;
     cursor: pointer;
 }
+.profile-auth-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content{
+    position: relative;
+}
+.user-info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+.user-info:hover{ text-decoration: underline;}
+.logout{
+    position: absolute;
+    opacity: 0;
+    background-color: gray;
+    color: snow;
+    left: 10px;
+    bottom: -40px;
+    padding: 5px 20px;
+}
+
+.content:hover  .logout{
+    opacity: 1;
+}
+
