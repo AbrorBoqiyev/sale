@@ -19,13 +19,24 @@ from django.urls import path, include
 from .views import *
 from django.conf.urls.static import static
 from django.conf import settings
+from blog.bapi_view import BlogViewSet
+
+from rest_framework import routers  
+router = routers.DefaultRouter()
+router.register(r"Blog", BlogViewSet)
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+
     path("", home, name="home"),
     path("about/", about, name="about"),
     path("blog/", include('blog.urls')),
     path('posts/', include('posts.urls')),
     path('users/', include('users.urls')),
     
-    path('admin/', admin.site.urls),
+    path('bapis/', include(router.urls)),
+    path('bapi-auth/', include('rest_framework.urls')),
+
+
+    
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
