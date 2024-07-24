@@ -34,8 +34,8 @@ urlpatterns = [
     path('posts/', include('posts.urls')),
     path('users/', include('users.urls')),
     
-    path('bapis/', include(router.urls)),
-    path('bapi-auth/', include('rest_framework.urls')),
+    path('apis/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
 
 
     
