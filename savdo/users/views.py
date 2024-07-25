@@ -45,7 +45,7 @@ def login_user(request):
             if user := authenticate(request, username=username, password=password):
                 login(request, user)
                 messages.success(request, f"welcome {username}!")
-                return redirect('home')
+                return redirect('profile_page')
             else:
                 messages.error(request, 'invalid username or password')
                 return redirect('login_user')
@@ -59,3 +59,9 @@ def logout_user(request):
     logout(request)
     messages.success(request, 'You have been logged out')
     return redirect('home')
+
+def profile_page(request):
+    context = {
+        'user': request.user
+    }
+    return render(request, 'profile_page.html', context)
