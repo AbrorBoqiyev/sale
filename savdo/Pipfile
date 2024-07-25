@@ -8,10 +8,11 @@ django="*"
 django-bootstrap5 = "*"
 pillow = "*"
 serializer = "*"
-djangorestframework = "*"
 python-decouple = "*"
 requests = "*"
 pyjwt = "*"
+djangorestframework = "*"
+serializers = "*"
 
 [dev-packages]
 

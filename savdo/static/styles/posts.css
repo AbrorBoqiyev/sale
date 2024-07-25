@@ -13,7 +13,7 @@ hr {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: transparent;
-    gap: 45px;
+    gap: 15px;
     padding: 25px;
     width: 90%;
     margin: auto;
