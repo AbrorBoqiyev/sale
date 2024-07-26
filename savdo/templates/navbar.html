@@ -20,7 +20,7 @@
                 <a class="nav-item signup" href="{%url 'create_post'%}">Create post</a>
                 <div class="content">
                     <p class="user-info">
-                        {{ request.user.username | title}}     
+                        <a class="nav-item login" href="{% url 'profile_page' %}">{{ request.user.username | title}}</a>
                         <img src="request.user.profile.image.url" class="user-image" alt="user-image">
                      </p>
                     <a class="nav-item logout" href="{%url 'logout_user' %}">Log out</a>

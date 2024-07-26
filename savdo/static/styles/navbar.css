@@ -11,8 +11,9 @@ main {
 header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     box-shadow: inset 1px 1px 5px #333;
-    padding: 20px;
+    padding: 15px;
     background-color: lightblue;
 }
 .links a{
