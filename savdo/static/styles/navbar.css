@@ -74,3 +74,10 @@ a:hover{
     opacity: 1;
 }
 
+#messages {
+    position:absolute;
+    top: 13%;
+    left: 15%;
+    background-color: transparent;
+}
+
