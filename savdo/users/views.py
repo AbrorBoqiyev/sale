@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import UserForm, LoginForm
+from .forms import UserForm, LoginForm, ProfileForm
 from django.contrib.auth.models import User
 from .models import Profile
 from django.contrib.auth import authenticate, login, logout
@@ -61,7 +61,21 @@ def logout_user(request):
     return redirect('home')
 
 def profile_page(request):
+    profile = Profile.objects.filter(id=request.user.profile.id).first()
+    form = ProfileForm(instance=profile)
+    
+    if request.method == "POST":
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile updated')
+            return redirect('profile_page')
+        else:
+            print('FORM IS NOT VALID')
+            print(form.errors)
+            
     context = {
-        'user': request.user
+        'user': request.user,
+        'form': form
     }
     return render(request, 'profile_page.html', context)

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+    Update {{user.username|title}} Profile 
+{% endblock%}
+
+{% block css %}
+   <link rel="stylesheet" href="{% static 'style/profile.css' %}">
+{% endblock %}
+
+{%block content%}
+    <div class="intro-wrapper">
+        <h2>
+            {{user.username|title}} Profile
+            <img src="{{user.Profile.image.url}}" class="profile-picture" alt="profile-picture">
+        </h2>
+        <a href="{% url 'profile_page' %}" class="btn btn-outline-primary">
+            Profile
+        </a>
+    </div>
+
+    <hr style="margin: 20px 0;">
+
+    {%include 'form_snippets.html' with form=form%}
+{% endblock %}

@@ -72,7 +72,7 @@ class ProfileForm(forms.ModelForm):
     image = forms.ImageField(label='profile picture', required=False,
                              widget=forms.FileInput(
                                  attrs={'class': 'form-control', "placeholder": "profile picture"}))
-    gender = forms.choiceFied(label='choose your gender', choices=CHOICES, 
+    gender = forms.ChoiceField(label='choose your gender', choices=CHOICES, 
                               widget=forms.Select(
                                   attrs={'class': 'form-control'}))
     bio = forms.CharField(label='bio', required=False, help_text='write something about yourself',
