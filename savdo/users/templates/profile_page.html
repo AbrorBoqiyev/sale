@@ -31,8 +31,13 @@
                     <h4>{{ profile.age }}</h4>
                 </div>
                 <div class="right">
-                    <h6>Gender</h6>
-                    <h4>{{ profile.gender }}</h4>
+                    {%if profile.gender.value == 1 %}
+                        <h6>Gender</h6>
+                        <h4>Famale</h4>
+                    {%else%}
+                        <h6>Gender</h6>
+                        <h4>Male</h4>
+                    {%endif%}
                 </div>
             </div>
         </div>
