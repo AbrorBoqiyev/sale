@@ -21,7 +21,7 @@
                 <div class="content">
                     <p class="user-info">
                         <a class="nav-item login" href="{% url 'profile_page' %}">{{ request.user.username | title}}</a>
-                        <img src="request.user.profile.image.url" class="profile-picture" alt="user-image">
+                        <img src="{{user.profile.image.url}}" class="profile-picture" alt="user-image">
                      </p>
                     <a class="nav-item logout" href="{%url 'logout_user' %}">Log out</a>
                 </div>

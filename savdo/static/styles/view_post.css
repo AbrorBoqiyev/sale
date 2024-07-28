@@ -23,3 +23,16 @@ h3{text-align: center;}
     height: 29.7vh;
     /* background-color: red; */
 }
+.picture_view {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.upper_view, .owner-view_profile{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.owner-view_profile{
+    width: 19%;
+}    

@@ -23,6 +23,15 @@
         <hr>
         <div class="post-item">  
             <div class="view-content">
+                <div class="upper_view">
+                    <div class="owner-view_profile">
+                        <img src="{{post.get_owner_pic}}" class="picture_view" alt="picture">
+                        <h4>
+                             {{post.author}}
+                        </h4>
+                    </div>
+                    <b>{{post.date_posted|date}}</b>
+                </div>
                 <h3>{{ post.title }}</h3>
                 <p>{{ post.content }}</p>        
             </div>      
