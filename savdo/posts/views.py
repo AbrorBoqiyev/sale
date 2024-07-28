@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import PostsForm
 from .models import Posts
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 
 def postsView(request):
