@@ -60,8 +60,15 @@ def logout_user(request):
     messages.success(request, 'You have been logged out')
     return redirect('home')
 
+
 def profile_page(request):
-    profile = Profile.objects.filter(id=request.user.profile.id).first()
+    profile = Profile.objects.filter(id=request.user.id).first()
+    context = {'profile': profile}
+    return render(request, 'profile_page.html', context)
+
+    
+def update_profile_page(request):
+    profile = Profile.objects.filter(id=request.user.id).first()
     form = ProfileForm(instance=profile)
     
     if request.method == "POST":
@@ -78,4 +85,4 @@ def profile_page(request):
         'user': request.user,
         'form': form
     }
-    return render(request, 'profile_page.html', context)
+    return render(request, 'update_profile_page.html', context)
