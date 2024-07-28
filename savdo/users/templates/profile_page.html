@@ -15,11 +15,11 @@
         <div class="content">
             <div class="control">
                 <h6>Name Surname</h6>
-                <h4>{{ profile.firstname|title }} {{ profile.lastname|title}}</h4>
+                <h4>{{ user.username|title }} {{ request.profile.user.lastname|title}}</h4>
             </div>
             <div class="control">
                 <h6>Email</h6>
-                <h4>{{ profile.user.email }}</h4>
+                <h4>{{ user.email }}</h4>
             </div>
             <div class="control">
                 <h6>Bio</h6>

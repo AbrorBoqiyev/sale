@@ -22,7 +22,11 @@
                     <div class="post-info">
                         <b>
                             <img class="pict" src="{{post.get_owner_pic}}" width="50" alt="image">
-                            {{post.author}}
+                            {%if request.user == post.author%}
+                                <a class="view-auth-profile" href="{% url 'profile_page'%}">{{post.author}}</a>
+                            {%else%}
+                                <a class="prof-item " href="#">{{post.author}}</a>
+                            {%endif%}
                         </b> 
                         <b>{{post.date_posted|date}}</b>
                     </div>
