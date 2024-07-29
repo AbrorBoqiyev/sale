@@ -36,3 +36,7 @@ h3{text-align: center;}
 .owner-view_profile{
     width: 19%;
 }    
+.owner-view_profile:hover{
+    text-decoration: underline;
+    background-color: transparent;
+}

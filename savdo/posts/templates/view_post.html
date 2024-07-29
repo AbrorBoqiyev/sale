@@ -4,7 +4,7 @@
 {%block title%}View_Post{%endblock%}
 
 {%block css%}
-    <link rel="stylesheet" href="{%static "styles/view_post.css"%}">
+    <link rel="stylesheet" href="{%static 'styles/view_post.css' %}">
 {%endblock%}
 
 {%block content%}
@@ -12,12 +12,11 @@
         <div class="headerPost">
             <h1>Posts-item</h1>
             <div class="action-btns">
-                {%if request.user.is_authenticated%}
                     {%if request.user == post.author%}
                         <a href="{%url 'update-post' post.id %}">edit</a>
                         <a class="del" href="{%url 'delete-post' post.id %}">delete</a>
                     {%endif%}
-                {%endif%}
+                
             </div>
         </div>
         <hr>
@@ -27,7 +26,11 @@
                     <div class="owner-view_profile">
                         <img src="{{post.get_owner_pic}}" class="picture_view" alt="picture">
                         <h4>
-                             {{post.author}}
+                            {%if request.user == post.author%}
+                                <a class="view-auth-profile" href="{% url 'profile_page' %}">{{post.author}}</a>
+                            {%else%}
+                                <a class="prof-item " href="#">{{post.author}}</a>
+                            {%endif%}
                         </h4>
                     </div>
                     <b>{{post.date_posted|date}}</b>
