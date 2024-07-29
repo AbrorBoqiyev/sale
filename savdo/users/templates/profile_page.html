@@ -13,17 +13,41 @@
     <div class="profile-intro-wrapper">
         <img src="{{ user.profile.image.url }}" alt="profile-picture" class="profile-picture-item">
         <div class="content">
-            <div class="control">
-                <h6>Name Surname</h6>
-                <h4>{{ user.username|title }} {{ request.profile.user.lastname|title}}</h4>
+            <div class="control name">
+                <div class="name-left">
+                    <h6>Name Surname</h6>
+                    {%if profile.first_name or profile.last_name%}
+                        <h4> {{ profile.first_name|title}} {{ profile.last_name|title}}</h4>
+                    {% else %}
+                        <h4>{{ user.username|title }}</h4>
+                    {% endif %}
+                </div>
+                <div class="name-right">
+                    {% if request.user.is_authenticated %}
+                        {% if profile.id == request.user.profile.id %}
+                            <a href="{% url 'update_profile_page' %}" class="btn btn-outline-secondary">Update Profile</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+
             </div>
+
+
             <div class="control">
                 <h6>Email</h6>
-                <h4>{{ user.email }}</h4>
+                {%if profile.user.email %}
+                    <h4  ><a class="mail" href="mailto:{{ profile.user.email }} ">{{ user.email }}</a></h4>
+                {%else%}
+                    <h4>---</h4>
+                {%endif%}   
             </div>
             <div class="control">
                 <h6>Bio</h6>
-                <h4>{{ profile.bio}}</h4>
+                {% if profile.bio %}
+                    <h4 class="bio">{{ profile.bio }}</h4>
+                {% else %}
+                    <h4>---</h4>
+                {% endif %}
             </div>
             <div class="control age-gender">
                 <div class="left">
@@ -31,17 +55,16 @@
                     <h4>{{ profile.age }}</h4>
                 </div>
                 <div class="right">
-                    {%if profile.gender.value == 1 %}
-                        <h6>Gender</h6>
-                        <h4>Famale</h4>
+                    <h6>Gender</h6>
+                    {%if profile.gender %}
+                        <h4>{{profile.gender}}</h4>
                     {%else%}
-                        <h6>Gender</h6>
-                        <h4>Male</h4>
+                        <h4>---</h4>
                     {%endif%}
                 </div>
             </div>
         </div>
     </div>
 
-    <a href="{% url 'update_profile_page' %}" class="btn btn-outline-primary link">Update Profile</a>
+    <a href="{% url 'update_profile_page' %}" class="btn btn-outline-secondary">Update Profile</a>
 {% endblock%}

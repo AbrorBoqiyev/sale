@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: red;
 }
 
 .profile-intro-wrapper {
@@ -43,4 +44,12 @@
     display: block;
     text-align: center;
 }
-
+.name{
+    display: flex;
+    justify-content: space-between;
+}
+.mail:hover{
+    text-decoration: underline;
+    background-color: transparent;
+    color: rgb(77, 77, 241);
+}

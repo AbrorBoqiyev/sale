@@ -12,8 +12,8 @@
 {%block content%}
     <div class="intro-wrapper">
         <h2>
-            {{user.username|title}} Profile
-            <img src="{{user.Profile.image.url}}" class="profile-picture" alt="profile-picture">
+            {{user.username|title}}'s Profile
+            <img src="{{ user.profile.image.url }}" class="profile-picture" alt="profile-picture">
         </h2>
         <a href="{% url 'profile_page' %}" class="btn btn-outline-primary">
             Profile
