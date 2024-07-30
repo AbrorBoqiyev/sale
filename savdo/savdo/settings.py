@@ -138,6 +138,10 @@ DJOSER = {
     # "USER_CREATE_PASSWORD_RETYPE": True, # We can use this to make user retype the password
 }
 
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': 'timedelta(minutes=5)',
+# }
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
