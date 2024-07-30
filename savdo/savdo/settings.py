@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'users',
     'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -105,6 +107,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # Allows us to use token authentication throughout the project
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
+DJOSER = {
+    "USER_ID_FIELD": "username",  # We use username for login
+    # "LOGIN_FIELD": "email", # We can use email or username for login
+    # "USER_CREATE_PASSWORD_RETYPE": True, # We can use this to make user retype the password
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

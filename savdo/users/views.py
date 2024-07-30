@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .models import Profile
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages 
+from posts.models import Posts
 
 
 def create_user(request):
@@ -61,9 +62,21 @@ def logout_user(request):
     return redirect('home')
 
 
+# def profile_page(request, author_id: int = None):
 def profile_page(request):
-    profile = Profile.objects.filter(id=request.user.id).first()
-    context = {'profile': profile}
+    # posts = []
+    # if author_id:
+        # profile = Profile.objects.filter(user__id=author_id).first()
+    profile = Profile.objects.filter(id=request.user.profile.id).first()
+    #     posts = Posts.objects.filter(author=profile.user)
+    # elif request.user.is_authenticated:
+    #     profile = Profile.objects.filter(id=request.user.profile.id).first()
+    # else:
+        # return redirect('login_user')
+    context = {
+        'profile': profile,
+        # 'posts': posts
+    }
     return render(request, 'profile_page.html', context)
 
     

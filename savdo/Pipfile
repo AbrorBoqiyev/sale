@@ -13,6 +13,7 @@ requests = "*"
 pyjwt = "*"
 djangorestframework = "*"
 serializers = "*"
+djoser = "*"
 
 [dev-packages]
 
