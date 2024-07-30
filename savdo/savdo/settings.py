@@ -10,12 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+REFRESH_TOKEN_LIFETIME_SIX_WEEKS = 42 # days
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -44,6 +47,7 @@ INSTALLED_APPS = [
     'users',
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt',
     'djoser',
 ]
 
@@ -58,6 +62,19 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'savdo.urls'
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=REFRESH_TOKEN_LIFETIME_SIX_WEEKS),
+    'ROTATE_REFRESH_TOKENS': True, # If True, refresh tokens will be rotated
+    # That means that after each request we will get a new refresh token
+    # RU: Если True, токены обновления будут поворачиваться
+    # Это означает, что после каждого запроса мы получим новый токен обновления
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    # In the client we need to send the token in the header like this:
+    # Authorization: Bearer <token>   
+    # NOTE:  <token> must be sent without the brackets or quotes
+}
 
 TEMPLATES = [
     {
@@ -111,6 +128,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # Allows us to use token authentication throughout the project
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
 
