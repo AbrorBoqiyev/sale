@@ -1,2 +1,0 @@
-# sale
-E-commerce site
