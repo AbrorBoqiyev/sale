@@ -1,10 +1,12 @@
-import Blogs from "./Blogs";
+import Blog from "./Blog";
+import NBU from "./NBU";
 
 function App(props) {
   return (
     <div className="App">
       <h1>Hello world</h1>
-      <Blogs />
+      <Blog/>
+      <NBU/>
     </div>
   );
 }
