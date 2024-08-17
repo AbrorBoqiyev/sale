@@ -1,0 +1,13 @@
+.coverNbu{
+    background-color: rgb(204, 178, 147);
+    h2{
+        text-align: center;
+    }
+    .NBU{
+        display: grid;
+        grid-template-columns: 15% 1fr;
+        padding: 0 45px;
+        margin: 15px;
+        box-shadow: 1px 1px 5px #222;
+    }
+}

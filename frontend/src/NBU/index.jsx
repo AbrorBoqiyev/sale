@@ -28,13 +28,18 @@ function NBU() {
    
     return ( 
         <div className="coverNbu">
-            <h2 style={{textAlign: 'center'}}>this is working...</h2>
-            {items.map(i => (
-                <div className="NBU"style={{display:'grid', 'gridTemplateColumns': '15% 1fr', 'padding': '0 60px'}}>
-                    <h3>{i.title}: </h3>
-                    <p>{i.description}</p>
-                </div>
-            ))}
+            <h2>Blog API</h2>
+            {error && <p>error fetching data</p>}
+            {items.length === 0 ? (
+                <p>No items evailable</p>
+            ):(
+                items.map(i => (
+                    <div key={i.id} className="NBU">
+                        <h3>{i.title}:{i.id} </h3>
+                        <p>{i.description}</p>
+                    </div>
+                ))
+            )}
         </div>
      );
 }
